@@ -1,0 +1,209 @@
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: white;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+body {
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    color: #1a73e8;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.2em;
+}
+
+h3 {
+    color: #5f6368;
+    margin: 0 0 15px 0;
+}
+
+.gecmis-donem {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    border: 1px solid #e8eaed;
+}
+
+.gecmis-input {
+    display: flex;
+    gap: 15px;
+}
+
+.gecmis-input input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #dadce0;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: border-color 0.3s;
+}
+
+.gecmis-input input:focus {
+    outline: none;
+    border-color: #1a73e8;
+}
+
+.ders {
+    margin-bottom: 15px;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    transition: transform 0.2s;
+}
+
+.ders:hover {
+    transform: translateX(5px);
+}
+
+input, select {
+    padding: 10px;
+    border: 1px solid #dadce0;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: #1a73e8;
+}
+
+.ders-adi {
+    width: 250px;
+}
+
+.kredi {
+    width: 80px;
+}
+
+select.harf-notu {
+    width: 100px;
+    background-color: white;
+}
+
+button {
+    margin: 10px 5px;
+    padding: 12px 20px;
+    background-color: #1a73e8;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #1557b0;
+    transform: translateY(-2px);
+}
+
+button[onclick="dersSil(this)"] {
+    background-color: #dc3545;
+    padding: 8px 15px;
+}
+
+button[onclick="dersSil(this)"]:hover {
+    background-color: #bb2d3b;
+}
+
+#sonuc {
+    margin-top: 25px;
+}
+
+.sonuc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    background: linear-gradient(145deg, #ffffff, #f8f9fa);
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.sonuc-item {
+    background-color: white;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.sonuc-item:hover {
+    transform: translateY(-5px);
+}
+
+.sonuc-item.highlight {
+    background: linear-gradient(145deg, #1a73e8, #1557b0);
+    color: white;
+}
+
+.sonuc-baslik {
+    font-size: 0.9em;
+    color: #5f6368;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.sonuc-item.highlight .sonuc-baslik {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.sonuc-deger {
+    font-size: 2em;
+    font-weight: 600;
+    color: #1a73e8;
+}
+
+.sonuc-item.highlight .sonuc-deger {
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+        margin: 10px;
+    }
+
+    .ders {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .ders-adi, .kredi, select.harf-notu {
+        width: 100%;
+    }
+
+    .gecmis-input {
+        flex-direction: column;
+    }
+
+    .sonuc-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .sonuc-item {
+        padding: 15px;
+    }
+
+    .sonuc-deger {
+        font-size: 1.5em;
+    }
+} 
