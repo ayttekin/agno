@@ -5,40 +5,72 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AGNO Hesaplayıcı</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <div class="container">
-        <h1>AGNO Hesaplayıcı</h1>
-        
-        <div class="gecmis-donem">
-            <h3>Geçmiş Dönem Bilgileri (Opsiyonel)</h3>
+        <header>
+            <h1><i class="fas fa-calculator"></i> AGNO Hesaplayıcı</h1>
+            <p class="subtitle">Akademik not ortalamanızı kolayca hesaplayın</p>
+        </header>
+
+        <div class="gecmis-donem card">
+            <h3><i class="fas fa-history"></i> Geçmiş Dönem Bilgileri</h3>
             <div class="gecmis-input">
-                <input type="number" id="gecmisAgno" placeholder="Geçmiş AGNO" step="0.01" min="0" max="4">
-                <input type="number" id="gecmisKredi" placeholder="Geçmiş Toplam Kredi" min="0">
+                <div class="input-group">
+                    <label for="gecmisAgno">Geçmiş AGNO</label>
+                    <input type="number" id="gecmisAgno" placeholder="Örn: 3.25" step="0.01" min="0" max="4">
+                </div>
+                <div class="input-group">
+                    <label for="gecmisKredi">Geçmiş Toplam Kredi</label>
+                    <input type="number" id="gecmisKredi" placeholder="Örn: 60" min="0">
+                </div>
             </div>
         </div>
 
-        <div id="dersler">
-            <div class="ders">
-                <input type="text" placeholder="Ders Adı" class="ders-adi">
-                <input type="number" placeholder="Kredi" class="kredi" min="1" max="30">
-                <select class="harf-notu">
-                    <option value="4.0">AA</option>
-                    <option value="3.5">BA</option>
-                    <option value="3.0">BB</option>
-                    <option value="2.5">CB</option>
-                    <option value="2.0">CC</option>
-                    <option value="1.5">DC</option>
-                    <option value="1.0">DD</option>
-                    <option value="0.5">FD</option>
-                    <option value="0">FF</option>
-                </select>
+        <div class="dersler-container card">
+            <h3><i class="fas fa-book"></i> Dönem Dersleri</h3>
+            <div id="dersler">
+                <div class="ders">
+                    <input type="text" placeholder="Ders Adı" class="ders-adi">
+                    <div class="input-group-inline">
+                        <input type="number" placeholder="Kredi" class="kredi" min="1" max="30">
+                        <select class="harf-notu">
+                            <option value="" disabled selected>Not</option>
+                            <option value="4.0">AA</option>
+                            <option value="3.5">BA</option>
+                            <option value="3.0">BB</option>
+                            <option value="2.5">CB</option>
+                            <option value="2.0">CC</option>
+                            <option value="1.5">DC</option>
+                            <option value="1.0">DD</option>
+                            <option value="0.5">FD</option>
+                            <option value="0">FF</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="button-group">
+                <button onclick="dersEkle()" class="btn-add">
+                    <i class="fas fa-plus"></i> Yeni Ders Ekle
+                </button>
+                <button onclick="hesapla()" class="btn-calculate">
+                    <i class="fas fa-calculator"></i> Hesapla
+                </button>
             </div>
         </div>
-        <button onclick="dersEkle()">Yeni Ders Ekle</button>
-        <button onclick="hesapla()">Hesapla</button>
+
         <div id="sonuc"></div>
     </div>
+
+    <footer>
+        <p>Geliştirici: <a href="https://github.com/ayttekin" target="_blank">@ayttekin</a></p>
+    </footer>
+
     <script src="script.js"></script>
 </body>
 </html> 
