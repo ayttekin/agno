@@ -4,25 +4,30 @@ function dersEkle() {
     yeniDers.className = 'ders';
     yeniDers.innerHTML = `
         <input type="text" placeholder="Ders Adı" class="ders-adi">
-        <input type="number" placeholder="Kredi" class="kredi" min="1" max="30">
-        <select class="harf-notu">
-            <option value="4.0">AA</option>
-            <option value="3.5">BA</option>
-            <option value="3.0">BB</option>
-            <option value="2.5">CB</option>
-            <option value="2.0">CC</option>
-            <option value="1.5">DC</option>
-            <option value="1.0">DD</option>
-            <option value="0.5">FD</option>
-            <option value="0">FF</option>
-        </select>
-        <button onclick="dersSil(this)" style="background-color: #ff4444;">Sil</button>
+        <div class="input-group-inline">
+            <input type="number" placeholder="Kredi" class="kredi" min="1" max="30">
+            <select class="harf-notu">
+                <option value="" disabled selected>Not</option>
+                <option value="4.0">AA</option>
+                <option value="3.5">BA</option>
+                <option value="3.0">BB</option>
+                <option value="2.5">CB</option>
+                <option value="2.0">CC</option>
+                <option value="1.5">DC</option>
+                <option value="1.0">DD</option>
+                <option value="0.5">FD</option>
+                <option value="0">FF</option>
+            </select>
+            <button onclick="dersSil(this)" class="btn-delete">
+                <i class="fas fa-trash"></i>
+            </button>
+        </div>
     `;
     derslerDiv.appendChild(yeniDers);
 }
 
 function dersSil(button) {
-    button.parentElement.remove();
+    button.closest('.ders').remove();
 }
 
 function hesapla() {
